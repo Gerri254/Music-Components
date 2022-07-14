@@ -19,30 +19,38 @@ class MainActivity : AppCompatActivity() {
 
 
         imgmusic.setOnClickListener{
-            if (original){
-                imgmusic.setImageResource(R.drawable.tiktok)
-                original=false
-            }else{
-                imgmusic.setImageResource(R.drawable.spotify)
-                original =true
+            when {
+                original -> {
+                    imgmusic.setImageResource(R.drawable.tiktok)
+                    original=false
+                }
+                else -> {
+                    imgmusic.setImageResource(R.drawable.spotify)
+                    original =true
+                }
             }
         }
         checkfree.setOnCheckedChangeListener{_,isChecked ->
-        if(isChecked)
-        {
-            Toast.makeText(this,"You want to listen for free",Toast.LENGTH_SHORT).show()
-        }else{
-            Toast.makeText(this,"You have opted for premium",Toast.LENGTH_SHORT).show()
-        }
+            when {
+                isChecked -> {
+                    Toast.makeText(this,"You want to listen for free",Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    Toast.makeText(this,"You have opted for premium",Toast.LENGTH_SHORT).show()
+                }
+            }
 
 
         }
         toggleMobile.setOnCheckedChangeListener { _, isTurnedOn ->
-            if (isTurnedOn){
-                Toast.makeText(this,"Mobile data is on",Toast.LENGTH_SHORT).show()
+            when {
+                isTurnedOn -> {
+                    Toast.makeText(this,"Mobile data is on",Toast.LENGTH_SHORT).show()
 
-            }else{
-                Toast.makeText(this,"Mobile Data is Off",Toast.LENGTH_SHORT).show()
+                }
+                else -> {
+                    Toast.makeText(this,"Mobile Data is Off",Toast.LENGTH_SHORT).show()
+                }
             }
         }
         switchDisplay.setOnCheckedChangeListener { _,isSwitched ->
@@ -55,12 +63,16 @@ class MainActivity : AppCompatActivity() {
 
         }
         groupGenre.setOnCheckedChangeListener { _, id ->
-            if (id == R.id.radioHipHop){
-                Toast.makeText(this, "Select your favourite hiphop artist", Toast.LENGTH_SHORT).show()
-            }else if (id ==R.id.radioRB){
-                Toast.makeText(this, "Select your favourite R&B artist", Toast.LENGTH_SHORT).show()
-            }else if (id == R.id.radioModdy){
-                Toast.makeText(this, "Select your favourite Moddy Artist", Toast.LENGTH_SHORT).show()
+            when (id) {
+                R.id.radioHipHop -> {
+                    Toast.makeText(this, "Select your favourite hiphop artist", Toast.LENGTH_SHORT).show()
+                }
+                R.id.radioRB -> {
+                    Toast.makeText(this, "Select your favourite R&B artist", Toast.LENGTH_SHORT).show()
+                }
+                R.id.radioModdy -> {
+                    Toast.makeText(this, "Select your favourite Moddy Artist", Toast.LENGTH_SHORT).show()
+                }
             }
         }
 
