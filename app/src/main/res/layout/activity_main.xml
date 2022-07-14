@@ -46,27 +46,29 @@
         android:id="@+id/groupGenre"
         android:layout_width="278dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
         <RadioButton
+            android:layout_marginRight="20dp"
             android:id="@+id/radioHipHop"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
             android:text="HipHop" />
 
         <RadioButton
+            android:layout_marginRight="20dp"
             android:id="@+id/radioRB"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="R&B" />
+            android:text="RandB" />
 
         <RadioButton
             android:id="@+id/radioModdy"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:minHeight="48dp"
-            android:text="Moddy" />
+            android:text="Mood" />
     </RadioGroup>
 </LinearLayout>
